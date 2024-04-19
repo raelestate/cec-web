@@ -19,7 +19,7 @@
                     <li>
                         <details>
                             <summary class="text-lg">About Us</summary>
-                            <ul class="text-center">
+                            <ul class="text-center bg-cyan-900">
                                 <li class="px-2">
                                     <x-nav-link href="/fact_sheet" :active="request()->is('fact_sheet')">Fact Sheet</x-nav-link>
                                     <x-nav-link href="/history" :active="request()->is('history')">History</x-nav-link>
@@ -108,7 +108,7 @@
                 <li>
                     <details>
                         <summary class="text-lg">About Us</summary>
-                        <ul class="text-center">
+                        <ul class="text-center bg-cyan-900">
                             <li class="px-40">
                                 <x-nav-link href="/fact_sheet" :active="request()->is('fact_sheet')">Fact Sheet</x-nav-link>
                                 <x-nav-link href="/history" :active="request()->is('history')">History</x-nav-link>
@@ -134,7 +134,7 @@
                 <li>
                     <details>
                         <summary class="text-lg">Amenities</summary>
-                        <ul class="text-center">
+                        <ul class="text-center bg-cyan-900">
                             <li class="px-40">
                                 <x-nav-link href="/restaurant_outlets" :active="request()->is('restaurant_outlets')">Restaurant
                                     Outlets</x-nav-link>
@@ -151,8 +151,8 @@
                 <li>
                 <li>
                     <details>
-                        <summary class="text-lg">Events</summary>
-                        <ul class="text-center">
+                        <summary class="text-lg ">Events</summary>
+                        <ul class="text-center bg-cyan-900">
                             <li class="px-40">
                                 <x-nav-link href="/club_events" :active="request()->is('club_events')">Club Events</x-nav-link>
                             </li>

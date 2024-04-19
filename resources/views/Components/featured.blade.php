@@ -1,4 +1,4 @@
-<div class="card w-full bg-transparent border shadow-xl">
+<div class="card w-full bg-transparent border shadow-xl text-lime-200">
     <div class="card-body">
         <h2 class="card-title">Featured!</h2>
         <div class="collapse collapse-plus transparent border">
