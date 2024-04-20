@@ -56,7 +56,15 @@
                         </details>
                     </li>
                     <li>
-                        <x-nav-link href="/promotions" :active="request()->is('promotions')">Promotions</x-nav-link>
+                    <details>
+                            <summary class="text-lg">Promotions</summary>
+                            <ul class="text-center">
+                                <li class="px-2">
+                                    <x-nav-link href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-link>
+                                    <x-nav-link href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-link>
+                                </li>
+                            </ul>
+                        </details>
                     </li>
                     <li>
                     <li>
@@ -146,8 +154,16 @@
                     </details>
                 </li>
                 <li>
-                    <x-nav-link href="/promotions" :active="request()->is('promotions')">Promotions</x-nav-link>
-                </li>
+                    <details>
+                            <summary class="text-lg">Promotions</summary>
+                            <ul class="text-center bg-cyan-900">
+                                <li class="px-40">
+                                    <x-nav-link href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-link>
+                                    <x-nav-link href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-link>
+                                </li>
+                            </ul>
+                        </details>
+                    </li>
                 <li>
                 <li>
                     <details>

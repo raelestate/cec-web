@@ -1,9 +1,10 @@
 <x-layout>
     <x-slot:heading>
+        <x-breadcrumbs-promo></x-breadcrumbs-promo>
         <div class="flex place-content-center text-white text-3xl font-extrabold pt-10">
-            <h1>Circulars</h1>
+            <h1>Monthly Promos</h1>
         </div>
     </x-slot:heading>
-<x-circulars_content></x-circulars_content>
-</x-layout>
+    <x-monthly></x-monthly>
 
+</x-layout>

@@ -63,3 +63,9 @@ Route::get('/vision_mission', function () {
 Route::get('/developers', function () {
     return view('developers');
 });
+Route::get('/chef', function () {
+    return view('chef');
+});
+Route::get('/monthly_promo', function () {
+    return view('monthly_promo');
+});
