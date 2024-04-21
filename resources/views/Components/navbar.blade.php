@@ -56,7 +56,7 @@
                         </details>
                     </li>
                     <li>
-                    <details>
+                        <details>
                             <summary class="text-lg">Promotions</summary>
                             <ul class="text-center">
                                 <li class="px-2">
@@ -155,15 +155,15 @@
                 </li>
                 <li>
                     <details>
-                            <summary class="text-lg">Promotions</summary>
-                            <ul class="text-center bg-cyan-900">
-                                <li class="px-40">
-                                    <x-nav-link href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-link>
-                                    <x-nav-link href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-link>
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
+                        <summary class="text-lg">Promotions</summary>
+                        <ul class="text-center bg-cyan-900">
+                            <li class="px-40">
+                                <x-nav-link href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-link>
+                                <x-nav-link href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-link>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
                 <li>
                 <li>
                     <details>

@@ -1,6 +1,11 @@
 <x-layout>
     <x-slot:heading>
-        Contact Page
+        <div class="container mx-auto p-5">
+            <div class="flex place-content-center text-white text-3xl font-extrabold pt-10">
+                <h1>Member Login</h1>
+            </div>
+        </div>
+
     </x-slot:heading>
-    <h1>Hello from the Contact Page</h1>
+
 </x-layout>
