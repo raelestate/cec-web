@@ -7,10 +7,7 @@ use App\Http\Controllers\AdminController;
 
 Route::prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.home');
-    Route::middleware('auth')->prefix('admin')->group(function () {
-        Route::get('/', [AdminController::class, 'index'])->name('admin.home');
-        // Add more routes as needed
-    });
+
 });
 
 
