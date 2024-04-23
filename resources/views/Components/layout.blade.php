@@ -19,11 +19,11 @@
         } */
 
         body {
-            background: rgb(26, 25, 51);
-            background: -moz-linear-gradient(338deg, rgba(26, 25, 51, 1) 0%, rgba(32, 57, 83, 1) 33%, rgba(0, 53, 93, 1) 72%, rgba(6, 6, 45, 1) 100%);
-            background: -webkit-linear-gradient(338deg, rgba(26, 25, 51, 1) 0%, rgba(32, 57, 83, 1) 33%, rgba(0, 53, 93, 1) 72%, rgba(6, 6, 45, 1) 100%);
-            background: linear-gradient(338deg, rgba(26, 25, 51, 1) 0%, rgba(32, 57, 83, 1) 33%, rgba(0, 53, 93, 1) 72%, rgba(6, 6, 45, 1) 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1a1933", endColorstr="#06062d", GradientType=1);
+            background: rgb(14, 13, 40);
+            background: -moz-linear-gradient(19deg, rgba(14, 13, 40, 1) 0%, rgba(48, 20, 125, 1) 52%, rgba(6, 6, 45, 1) 100%);
+            background: -webkit-linear-gradient(19deg, rgba(14, 13, 40, 1) 0%, rgba(48, 20, 125, 1) 52%, rgba(6, 6, 45, 1) 100%);
+            background: linear-gradient(19deg, rgba(14, 13, 40, 1) 0%, rgba(48, 20, 125, 1) 52%, rgba(6, 6, 45, 1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0e0d28", endColorstr="#06062d", GradientType=1);
         }
     </style>
     <x-navbar>

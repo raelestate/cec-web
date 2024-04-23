@@ -10,7 +10,7 @@
 
     </x-slot:heading>
     <div class="grid-rows-auto">
-        <div class="container mx-auto px-10">
+        <div class="container mx-auto px-2">
             <x-welcome_card></x-welcome_card>
         </div>
 
