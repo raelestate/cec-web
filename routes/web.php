@@ -3,17 +3,9 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\AdminController;
-
-Route::prefix('admin')->group(function () {
-    Route::get('/', [AdminController::class, 'index'])->name('admin.home');
-
-});
-
 
 
 Route::get('/', function () {
-
     return view('home');
 });
 
@@ -75,4 +67,7 @@ Route::get('/chef', function () {
 });
 Route::get('/monthly_promo', function () {
     return view('monthly_promo');
+});
+Route::get('/admin-panel', function () {
+    return view('admin-panel');
 });
