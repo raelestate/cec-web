@@ -13,43 +13,43 @@
                 <ul tabindex="0"
                     class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-cyan-900 rounded-box w-52">
                     <li>
-                        <x-nav-link href="/" :active="request()->is('/')">
-                            Home</x-nav-link>
+                        <x-nav-home href="/" :active="request()->is('/')">
+                            Home</x-nav-home>
                     </li>
                     <li>
                         <details>
                             <summary class="text-lg">About Us</summary>
                             <ul class="text-center bg-cyan-900">
                                 <li class="px-2">
-                                    <x-nav-link href="/fact_sheet" :active="request()->is('fact_sheet')">Fact Sheet</x-nav-link>
-                                    <x-nav-link href="/history" :active="request()->is('history')">History</x-nav-link>
-                                    <x-nav-link href="/vision_mission" :active="request()->is('vision_mission')">Vision and Mision</x-nav-link>
-                                    <x-nav-link href="/house_rules" :active="request()->is('house_rules')">House Rules</x-nav-link>
-                                    <x-nav-link href="/manual" :active="request()->is('manual')">Manual on Corporate
-                                        Governance</x-nav-link>
+                                    <x-nav-home href="/fact_sheet" :active="request()->is('fact_sheet')">Fact Sheet</x-nav-home>
+                                    <x-nav-home href="/history" :active="request()->is('history')">History</x-nav-home>
+                                    <x-nav-home href="/vision_mission" :active="request()->is('vision_mission')">Vision and Mision</x-nav-home>
+                                    <x-nav-home href="/house_rules" :active="request()->is('house_rules')">House Rules</x-nav-home>
+                                    <x-nav-home href="/manual" :active="request()->is('manual')">Manual on Corporate
+                                        Governance</x-nav-home>
 
                                 </li>
                                 <li>
-                                    <x-nav-link href="/board" :active="request()->is('board')">Board of Directors</x-nav-link>
-                                    <x-nav-link href="/management_team" :active="request()->is('management_team')">Management Teams</x-nav-link>
-                                    <x-nav-link href="/developers" :active="request()->is('developers')">Developers</x-nav-link>
+                                    <x-nav-home href="/board" :active="request()->is('board')">Board of Directors</x-nav-home>
+                                    <x-nav-home href="/management_team" :active="request()->is('management_team')">Management Teams</x-nav-home>
+                                    <x-nav-home href="/developers" :active="request()->is('developers')">Developers</x-nav-home>
                                 </li>
 
                             </ul>
                         </details>
                     </li>
                     <li>
-                        <x-nav-link href="/membership" :active="request()->is('membership')">Membership</x-nav-link>
+                        <x-nav-home href="/membership" :active="request()->is('membership')">Membership</x-nav-home>
                     </li>
                     <li>
                         <details>
                             <summary class="text-lg">Amenities</summary>
                             <ul class="text-center">
                                 <li class="px-2">
-                                    <x-nav-link href="/restaurant_outlets" :active="request()->is('restaurant_outlets')">Restaurant
-                                        Outlets</x-nav-link>
-                                    <x-nav-link href="/function_rooms" :active="request()->is('function_rooms')">Function Rooms</x-nav-link>
-                                    <x-nav-link href="/sports" :active="request()->is('sports')">Sports</x-nav-link>
+                                    <x-nav-home href="/restaurant_outlets" :active="request()->is('restaurant_outlets')">Restaurant
+                                        Outlets</x-nav-home>
+                                    <x-nav-home href="/function_rooms" :active="request()->is('function_rooms')">Function Rooms</x-nav-home>
+                                    <x-nav-home href="/sports" :active="request()->is('sports')">Sports</x-nav-home>
                                 </li>
 
                             </ul>
@@ -60,8 +60,8 @@
                             <summary class="text-lg">Promotions</summary>
                             <ul class="text-center">
                                 <li class="px-2">
-                                    <x-nav-link href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-link>
-                                    <x-nav-link href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-link>
+                                    <x-nav-home href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-home>
+                                    <x-nav-home href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-home>
                                 </li>
                             </ul>
                         </details>
@@ -72,7 +72,7 @@
                             <summary class="text-lg">Events</summary>
                             <ul class="text-center">
                                 <li class="px-2">
-                                    <x-nav-link href="/club_events" :active="request()->is('club_events')">Club Events</x-nav-link>
+                                    <x-nav-home href="/club_events" :active="request()->is('club_events')">Club Events</x-nav-home>
                                 </li>
 
                             </ul>
@@ -80,9 +80,9 @@
                     </li>
                     </li>
                     <li>
-                        <x-nav-link href="/circulars" :active="request()->is('circulars')">Circulars</x-nav-link>
-                        <x-nav-link href="/contact" :active="request()->is('contact')">Contact Us</x-nav-link>
-                        <x-nav-link href="/member_login" :active="request()->is('member_login')">Member Login</x-nav-link>
+                        <x-nav-home href="/circulars" :active="request()->is('circulars')">Circulars</x-nav-home>
+                        <x-nav-home href="/contact" :active="request()->is('contact')">Contact Us</x-nav-home>
+                        <x-nav-home href="/member_login" :active="request()->is('member_login')">Member Login</x-nav-home>
                     </li>
                 </ul>
             </div>
@@ -110,44 +110,44 @@
         <div class="navbar-center hidden lg:flex">
             <ul class="menu menu-horizontal px-1 z-40">
                 <li>
-                    <x-nav-link href="/" :active="request()->is('/')">
-                        Home</x-nav-link>
+                    <x-nav-home href="/" :active="request()->is('/')">
+                        Home</x-nav-home>
                 </li>
                 <li>
                     <details>
                         <summary class="text-lg">About Us</summary>
                         <ul class="text-center bg-cyan-900">
                             <li class="px-40">
-                                <x-nav-link href="/fact_sheet" :active="request()->is('fact_sheet')">Fact Sheet</x-nav-link>
-                                <x-nav-link href="/history" :active="request()->is('history')">History</x-nav-link>
-                                <x-nav-link href="/vision_mission" :active="request()->is('vision_mission')">Vision and Mision</x-nav-link>
-                                <x-nav-link href="/house_rules" :active="request()->is('house_rules')">House Rules</x-nav-link>
-                                <x-nav-link href="/manual" :active="request()->is('manual')">Manual on Corporate
-                                    Governance</x-nav-link>
+                                <x-nav-home href="/fact_sheet" :active="request()->is('fact_sheet')">Fact Sheet</x-nav-home>
+                                <x-nav-home href="/history" :active="request()->is('history')">History</x-nav-home>
+                                <x-nav-home href="/vision_mission" :active="request()->is('vision_mission')">Vision and Mision</x-nav-home>
+                                <x-nav-home href="/house_rules" :active="request()->is('house_rules')">House Rules</x-nav-home>
+                                <x-nav-home href="/manual" :active="request()->is('manual')">Manual on Corporate
+                                    Governance</x-nav-home>
                                 <div class="divider"></div>
 
                             </li>
                             <li>
-                                <x-nav-link href="/board" :active="request()->is('board')">Board of Directors</x-nav-link>
-                                <x-nav-link href="/management_team" :active="request()->is('management_team')">Management Teams</x-nav-link>
-                                <x-nav-link href="/developers" :active="request()->is('developers')">Developers</x-nav-link>
+                                <x-nav-home href="/board" :active="request()->is('board')">Board of Directors</x-nav-home>
+                                <x-nav-home href="/management_team" :active="request()->is('management_team')">Management Teams</x-nav-home>
+                                <x-nav-home href="/developers" :active="request()->is('developers')">Developers</x-nav-home>
                             </li>
 
                         </ul>
                     </details>
                 </li>
                 <li>
-                    <x-nav-link href="/membership" :active="request()->is('membership')">Membership</x-nav-link>
+                    <x-nav-home href="/membership" :active="request()->is('membership')">Membership</x-nav-home>
                 </li>
                 <li>
                     <details>
                         <summary class="text-lg">Amenities</summary>
                         <ul class="text-center bg-cyan-900">
                             <li class="px-40">
-                                <x-nav-link href="/restaurant_outlets" :active="request()->is('restaurant_outlets')">Restaurant
-                                    Outlets</x-nav-link>
-                                <x-nav-link href="/function_rooms" :active="request()->is('function_rooms')">Function Rooms</x-nav-link>
-                                <x-nav-link href="/sports" :active="request()->is('sports')">Sports</x-nav-link>
+                                <x-nav-home href="/restaurant_outlets" :active="request()->is('restaurant_outlets')">Restaurant
+                                    Outlets</x-nav-home>
+                                <x-nav-home href="/function_rooms" :active="request()->is('function_rooms')">Function Rooms</x-nav-home>
+                                <x-nav-home href="/sports" :active="request()->is('sports')">Sports</x-nav-home>
                             </li>
 
                         </ul>
@@ -158,8 +158,8 @@
                         <summary class="text-lg">Promotions</summary>
                         <ul class="text-center bg-cyan-900">
                             <li class="px-40">
-                                <x-nav-link href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-link>
-                                <x-nav-link href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-link>
+                                <x-nav-home href="/monthly_promo" :active="request()->is('monthly_promo')">Monthly Promo</x-nav-home>
+                                <x-nav-home href="/chef" :active="request()->is('chef')">Chef Specialties</x-nav-home>
                             </li>
                         </ul>
                     </details>
@@ -170,7 +170,7 @@
                         <summary class="text-lg ">Events</summary>
                         <ul class="text-center bg-cyan-900">
                             <li class="px-40">
-                                <x-nav-link href="/club_events" :active="request()->is('club_events')">Club Events</x-nav-link>
+                                <x-nav-home href="/club_events" :active="request()->is('club_events')">Club Events</x-nav-home>
                             </li>
 
                         </ul>
@@ -178,15 +178,15 @@
                 </li>
                 </li>
                 <li>
-                    <x-nav-link href="/circulars" :active="request()->is('circulars')">Circulars</x-nav-link>
-                    <x-nav-link href="/contact" :active="request()->is('contact')">Contact Us</x-nav-link>
+                    <x-nav-home href="/circulars" :active="request()->is('circulars')">Circulars</x-nav-home>
+                    <x-nav-home href="/contact" :active="request()->is('contact')">Contact Us</x-nav-home>
                 </li>
             </ul>
         </div>
         <div class="navbar-end hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li>
-                    <x-nav-link href="/member_login" :active="request()->is('member_login')">Member Login</x-nav-link>
+                    <x-nav-home href="/member_login" :active="request()->is('member_login')">Member Login</x-nav-home>
                 </li>
             </ul>
         </div>
