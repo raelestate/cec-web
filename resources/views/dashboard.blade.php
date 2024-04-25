@@ -5,26 +5,5 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-black">
-                    @php
-                        $currentTime = now()->setTimezone('Asia/Manila');
-                        $hour = $currentTime->hour;
-                        $greeting = $hour;
-                        if ($hour < 12) {
-                            $greeting = 'Good Morning';
-                        } elseif ($hour >= 18 || $hour == 0) {
-                            $greeting = 'Good Evening';
-                        }
-
-                        $registeredUsers = App\Models\User::count();
-                    @endphp
-                    <p class="text-2xl font-bold">{{ __($greeting) }}, {{ Auth::user()->name }}.</p>
-                    <p class="mt-2">Today is {{ $currentTime->toFormattedDateString() }}.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <x-dashboard_greet_user></x-dashboard_greet_user>
 </x-app-layout>
