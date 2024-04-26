@@ -1,0 +1,319 @@
+CREATE A TABLE (Migration)
+
+php artisan make:migration create_[yourtablename]_table <----must be plural
+
+Check if it is created
+
+go to database>migrations
+
+MODIFY THE Migration file that has been created recently
+
+eg. $table->id();
+$table->string('table_name');
+check the docs https://laravel.com/docs/11.x/migrations#available-column-types
+
+Next generate the table
+
+php artisan migrate
+
+check if it is created at the database.
+
+------------------------------------------------------------------------
+
+CREATE A MODEL FOR TABLE
+
+use the command create model
+
+php artisan make:model ModelName <------MustBeCamelCase
+				 <------Must be related to the table that you created recently and must be singlar
+
+manage table
+
+declare:
+protected $fillable = [
+	'',
+	'',
+	'',
+	Columns must match at the migration you just created
+];
+
+-----------------------------------
+CREATE A CONTROLLER
+
+php artisan make:controller YourTableNameController
+
+go to app/http/Controllers to verify if it is created
+
+-------------------------------------
+MAKE A VIEW
+
+make a new folder at resources/views
+	eg. carousel
+then create a blade named index.blade.php
+create a route
+route>web.php
+
+import first the controller name
+
+use App\Http\Controllers\ControllerName
+Route::get('/carousel', [CarouselController::class, 'index'])->name('carousel.index');
+
+Create function in controller
+
+public function index(){
+	return view('carousel.index')
+}
+
+ 
+try the route using 127.0.0.1/carousel
+
+-------------------------------------------
+
+CREATE CRUD PAGES
+
+- CREATE PAGE
+
+copy the route and copy the carousel and change the /carousel to /carousel/create and also change the index to carousel.create
+
+from this:
+Route::get('/carousel', [CarouselController::class, 'index'])->name('carousel.index');
+
+to this:
+Route::get('/carousel/create', [CarouselController::class, 'create'])->name('carousel.index');
+
+go to CarouselController
+
+create:
+
+public function create(){
+	return view('products.create')
+}
+
+go to resources/carousel
+then create a blade named create.blade.php
+
+generate HTML <h1>Create Caroulsel</h1>
+
+now create a form at create.blade.php
+
+<form method="post" action"{{route('carousel.store')}}">
+	@csrf
+	@method('post');
+	<div>
+		<label>name</label>
+		<input type="text" name="name" placeholder="name" />
+	</div>
+	<----Create the same for others, (eg. image and stuff)---->
+	<input type="submit" value="Save"/>
+</form>
+
+SAVE DATA TO CONTROLLER
+
+go to route
+create another route
+
+Route::post('/carousel', [CarouselController::class, 'store'])->name('carousel.store');
+
+go back to CarouselController
+and create a function store
+
+use Illuminate\Http\Request;
+public function store(Request $request){
+	dd($request);
+}
+
+
+---------------------------
+Store data in database
+
+import the model carousel at CarouselController
+
+use App\Models\Carousel;
+
+public function store(Request $request){
+	$data = $request->validate([
+		'' => 'required',
+		'' => 'required|image',
+		'' => 'required',
+	]);
+	//see docs at https://laravel.com/docs/11.x/validation#available-validation-rules
+	$newCarousel = Carousel::create($data);
+
+	return redirect(route('carousel.index'));
+}
+
+-------------------------------
+CREATE AN ERROR
+
+go to create.blade.php
+
+@if($errors->any())
+	ul
+	@foreach($errors->all() as $error)
+	ul
+	{{$error}}
+
+
+
+----------------------
+Print all data from database
+
+go to CarouselController
+
+
+    public function index(){
+	$carousel = Carousel::all();
+        return view('carousel.index', ['carousel' => $carousel);
+    }
+
+
+go to index.blade.php to print it on frontend
+
+example only, u can output all the contents on your table
+div
+	table
+		tr
+			th ID th
+			th ID th
+			th ID th
+		tr
+	@foreach($carousel as $carousel)
+		tr
+			td{{$carousel->id}}
+		tr
+	@endforeach
+
+
+
+--------------------------------------------------------------------
+EDIT DATA
+
+create a route
+
+    Route::get('/carousel/{carousel}/edit', [CarouselController::class, 'edit'])->name('carousel.edit');
+
+go to Controller
+
+make a function edit
+
+public function edit(Carousel $carousel){
+	dd($carousel);
+}
+
+
+go to index
+
+add th edit
+
+td
+	a href ="{{route('carousel.edit',['carousel' => $carousel]}}" EDIT
+td
+
+copy the create.blade.php then rename EDIT
+
+then go to controller
+
+    public function edit(Carousel $carousel){
+        return view('carousel.edit',['carousel'=>$carousel]);
+    }
+
+then go to edit.blade.php and modify the form
+<h1>EDIT</h1>
+    <img src="{{ $carousel->image }}" alt="">
+    <form method="POST" action="{{ route('carousel.update', ['carousel' => $carousel]) }}" enctype="multipart/form-data">
+        @csrf
+        @method('put');
+        <div>
+            <label>Title</label>
+            <input type="text" name="carousel_title" placeholder="Carousel Title"
+                value="{{ $carousel->carousel_title }}" />
+        </div>
+        <div>
+            <label>Image</label>
+
+            <input type="file" name="image" value="{{ $carousel->image }}" />
+        </div>
+        <div>
+            <input type="submit" value="Update" />
+        </div>
+    </form>
+    <div>
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @endif
+    </div>
+---------------------------------------------------------------------
+
+UPDATE
+
+change the @method('post') from edit.blade.php to @method('put')
+go to web.php
+then add this
+    Route::put('/carousel/{carousel}/update', [CarouselController::class, 'update'])->name('carousel.update');
+
+go to controller
+add update function
+
+    public function update(Carousel $carousel, Request $request){
+	    $data = $request->validate([
+        'carousel_title' => 'required',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+    ]);
+	
+	$carousel->update($data);
+	return redirect()->route('carousel.index')->with('success', 'Carousel created successfully.');
+
+    }
+
+go to index.blade.php and add this
+    <div>
+        @if (session()->has('success'))
+            <div>{{ session('success') }}</div>
+        @endif
+    </div>
+
+-----------------------------------------------
+
+
+ADD DELETE FUNCTIONALITY
+
+go to index.blade.php and add this
+
+<td>
+                    <form method="POST" action="{{ route('carousel.destroy', ['carousel' => $carousels]) }}">
+                        @csrf
+                        @method('delete')
+                        <input type="submit" value="Delete" />
+                    </form>
+                </td>
+
+then the route, add this
+
+
+ Route::delete('/carousel/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('carousel.destroy');
+
+
+then at controller
+
+    public function destroy(Carousel $carousel){
+        $carousel->delete();
+        return redirect()->route('carousel.index')->with('success', 'Carousel deleted successfully.');
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

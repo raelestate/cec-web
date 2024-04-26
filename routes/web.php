@@ -2,12 +2,28 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CarouselController;
+
+
+
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    // route carousel CRUD ADMIN
+    Route::get('/carousel', [CarouselController::class, 'index'])->name('carousel.index');
+    Route::get('/carousel/create', [CarouselController::class, 'create'])->name('carousel.create');
+    Route::post('/carousel', [CarouselController::class, 'store'])->name('carousel.store');
+    Route::get('/carousel/{carousel}/edit', [CarouselController::class, 'edit'])->name('carousel.edit');
+    Route::put('/carousel/{carousel}/update', [CarouselController::class, 'update'])->name('carousel.update');
+    Route::delete('/carousel/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('carousel.destroy');
+
+    //profile CRUD ADMIN
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
