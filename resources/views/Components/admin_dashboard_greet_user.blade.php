@@ -1,5 +1,5 @@
-<div class="py-12">
-    <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+<div class="py-5">
+    <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             <div class="p-6 text-black">
                 @php
@@ -14,8 +14,9 @@
                         $greeting = 'Good Evening';
                     }
                 @endphp
-                <p class="text-2xl font-bold">{{ __($greeting) }}, {{ Auth::user()->name }}.</p>
-                <p class="mt-2">Today is {{ $currentTime->toFormattedDateString() }}.</p>
+                <p class="text-3xl">{{ __($greeting) }},</p>
+                <p class="text-2xl font-bold"> {{ Auth::user()->name }}.</p>
+                <p class="mt-4 font-bold">Today is {{ $currentTime->toFormattedDateString() }}.</p>
 
             </div>
         </div>

@@ -4,6 +4,17 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
+    <x-admin_dashboard_register_user></x-admin_dashboard_register_user>
 
-    <x-dashboard_greet_user></x-dashboard_greet_user>
+    <div class="grid grid-cols-2 gap-0">
+        <x-admin_dashboard_greet_user></x-admin_dashboard_greet_user>
+        <x-admin_dashboard_greet_user></x-admin_dashboard_greet_user>
+    </div>
+    <div class="grid grid-cols-2">
+       
+    </div>
+    
+</div>
+
+
 </x-app-layout>
