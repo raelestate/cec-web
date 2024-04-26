@@ -1,4 +1,4 @@
-<div class="transparent border rounded shadow-lg p-6 rounded-lg">
+<div class="transparent border shadow-lg p-6 rounded-lg">
     <h2 class="text-3xl font-bold mb-4">Mission</h2>
     <p class="text-lg mb-8">
         To offer excellent food with efficient services at the most competitive prices that delight our members and
