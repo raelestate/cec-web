@@ -3,11 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarouselController;
-
-
-
-
-
+use App\Http\Controllers\WelcomeCardController;
 
 
 Route::get('/dashboard', function () {
@@ -22,6 +18,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/carousel/{carousel}/edit', [CarouselController::class, 'edit'])->name('carousel.edit');
     Route::put('/carousel/{carousel}/update', [CarouselController::class, 'update'])->name('carousel.update');
     Route::delete('/carousel/{carousel}/destroy', [CarouselController::class, 'destroy'])->name('carousel.destroy');
+
+    // route welcome card CRUD ADMIN
+    Route::get('/welcomecard', [WelcomeCardController::class, 'index'])->name('welcomecard.index');
+    Route::get('/welcomecard/create', [WelcomeCardController::class, 'create'])->name('welcomecard.create');
+    Route::post('/welcomecard', [WelcomeCardController::class, 'store'])->name('welcomecard.store');
+    Route::get('/welcomecard/{welcomecard}/edit', [WelcomeCardController::class, 'edit'])->name('welcomecard.edit');
+    Route::put('/welcomecard/{welcomecard}/update', [WelcomeCardController::class, 'update'])->name('welcomecard.update');
+    Route::delete('/welcomecard/{welcomecard}/destroy', [WelcomeCardController::class, 'destroy'])->name('welcomecard.destroy');
+
+
+
 
     //profile CRUD ADMIN
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

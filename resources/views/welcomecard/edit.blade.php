@@ -1,25 +1,25 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Carousel
+            Welcome Card
         </h2>
     </x-slot>
     <h1 class="text-3xl font-bold mb-8">EDIT</h1>
-    <img src="{{ $carousel->image }}" alt="">
-    <form method="POST" action="{{ route('carousel.update', ['carousel' => $carousel]) }}"
-        enctype="multipart/form-data" class="mt-8">
+    <form method="POST" action="{{ route('welcomecard.update', ['welcomecard' => $welcomecard]) }}"
+        enctype="multipart/form-data" class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
         @csrf
         @method('put')
         <div class="mb-4">
-            <label for="carousel_title" class="block text-sm font-medium text-gray-700">Title</label>
-            <input type="text" name="carousel_title" id="carousel_title" placeholder="Carousel Title"
-                value="{{ $carousel->carousel_title }}"
+            <label for="welcome_title" class="block text-sm font-medium text-gray-700">Welcome Card Title</label>
+            <input type="text" name="welcome_title" id="welcome_title" placeholder="Welcome Card Title"
+                value="{{ $welcomecard->welcome_title }}"
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         </div>
         <div class="mb-4">
-            <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
-            <input type="file" name="image" id="image"
-                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{$carousel->image}}">
+            <label for="welcome_text" class="block text-sm font-medium text-gray-700">Welcome Text</label>
+            <textarea name="welcome_text" id="welcome_text"
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                cols="30" rows="10">{{ $welcomecard->welcome_text }}</textarea>
         </div>
         <div>
             <input type="submit"

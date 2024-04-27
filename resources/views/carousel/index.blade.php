@@ -1,55 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Carousel</title>
-</head>
-
-<body>
-    <h1>CAROUSEL</h1>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Carousel
+        </h2>
+    </x-slot>
     <div>
         @if (session()->has('success'))
-            <div>{{ session('success') }}</div>
+            <div class="bg-green-200 text-green-800 py-2 px-4 rounded-md mb-4">{{ session('success') }}</div>
         @endif
     </div>
-    <div>Create a Carousel</div>
-    <a href="{{ route('carousel.create') }}">Create</a>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Image</th>
-            <th>Created at</th>
-            <th>Updated at</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
-        @foreach ($carousel as $carousels)
+    <div class="mb-4">Create a Carousel</div>
+    <a href="{{ route('carousel.create') }}"
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create</a>
+    <table class="w-full mt-8">
+        <thead>
             <tr>
-                <td>{{ $carousels->id }}</td>
-                <td>{{ $carousels->carousel_title }}</td>
-                <td>
-                    <img src="{{ $carousels->image }}" alt="">
-                    {{ $carousels->image }}
-                </td>
-                <td>{{ $carousels->created_at }}</td>
-                <td>{{ $carousels->updated_at }}</td>
-                <td>
-                    <a href="{{ route('carousel.edit', ['carousel' => $carousels]) }}">Edit</a>
-                </td>
-                <td>
-                    <form method="POST" action="{{ route('carousel.destroy', ['carousel' => $carousels]) }}">
-                        @csrf
-                        @method('delete')
-                        <input type="submit" value="Delete" />
-                    </form>
-                </td>
+                <th class="border px-4 py-2">#</th>
+                <th class="border px-4 py-2">Title</th>
+                <th class="border px-4 py-2">Image</th>
+                <th class="border px-4 py-2">Created at</th>
+                <th class="border px-4 py-2">Updated at</th>
+                <th class="border px-4 py-2">Edit</th>
+                <th class="border px-4 py-2">Delete</th>
             </tr>
-        @endforeach
+        </thead>
+        <tbody>
+            @foreach ($carousel as $carousels)
+                <tr>
+                    <td class="border px-4 py-2">{{ $carousels->id }}</td>
+                    <td class="border px-4 py-2">{{ $carousels->carousel_title }}</td>
+                    <td class="border px-4 py-2">
+                        <img src="{{ $carousels->image }}" alt="{{ $carousels->carousel_title }}"
+                            class="w-20 h-20 object-cover">
+                    </td>
+                    <td class="border px-4 py-2">{{ $carousels->created_at }}</td>
+                    <td class="border px-4 py-2">{{ $carousels->updated_at }}</td>
+                    <td class="border px-4 py-2">
+                        <a href="{{ route('carousel.edit', ['carousel' => $carousels]) }}"
+                            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Edit</a>
+                    </td>
+                    <td class="border px-4 py-2">
+                        <form method="POST" action="{{ route('carousel.destroy', ['carousel' => $carousels]) }}">
+                            @csrf
+                            @method('delete')
+                            <button type="submit"
+                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
     </table>
-</body>
 
-</html>
+</x-app-layout>

@@ -39,7 +39,7 @@ class CarouselController extends Controller
 	    $data = $request->validate([
         'carousel_title' => 'required',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-    ]);
+    ]); 
 	
 	$carousel->update($data);
 	return redirect()->route('carousel.index')->with('success', 'Carousel created successfully.');

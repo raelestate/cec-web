@@ -12,12 +12,9 @@ $carousels = Carousel::all();
     <x-admin_dashboard_register_user></x-admin_dashboard_register_user>
 
     <div class="grid grid-cols-2 gap-0">
+        <x-admin-dashboard-redirect-welcomecard></x-admin-dashboard-redirect-welcomecard>
+
         <x-admin-dashboard-redirect-carousel></x-admin-dashboard-redirect-carousel>
-    </div>
-    <div class="grid grid-cols-2">
-
-    </div>
-
     </div>
 
 
