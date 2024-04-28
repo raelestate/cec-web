@@ -1,44 +1,22 @@
+<?php
+
+use App\Models\Featured;
+
+$features = Featured::all();
+?>
 <div class="card w-full bg-transparent border shadow-xl text-lime-200">
     <div class="card-body">
         <h2 class="card-title">Featured!</h2>
-        <div class="collapse collapse-plus transparent border">
-            <input type="radio" name="my-accordion-3" checked="checked" />
-            <div class="collapse-title text-xl font-medium">
-                How to Order
+        @foreach ($features as $featured)
+            <div class="collapse collapse-plus transparent border">
+                <input type="radio" name="my-accordion-3" checked="checked" />
+                <div class="collapse-title text-xl font-medium">
+                    {{ $featured->featured_title }}
+                </div>
+                <div class="collapse-content">
+                    <img src="{{ $featured->featured_image }}" alt="{{ $featured->featured_title }}">
+                </div>
             </div>
-            <div class="collapse-content">
-                <p>Order Here</p>
-            </div>
-        </div>
-
-        <div class="collapse collapse-plus transparent border">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title text-xl font-medium">
-                Pickup and Delivery Details
-            </div>
-            <div class="collapse-content">
-                <p>hello</p>
-            </div>
-        </div>
-
-        <div class="collapse collapse-plus transparent border">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title text-xl font-medium">
-                Meal Deal Promo!
-            </div>
-            <div class="collapse-content">
-                <p>hello</p>
-            </div>
-        </div>
-
-        <div class="collapse collapse-plus transparent border">
-            <input type="radio" name="my-accordion-3" />
-            <div class="collapse-title text-xl font-medium">
-                Meal Deal Promo!
-            </div>
-            <div class="collapse-content">
-                <p>hello</p>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>

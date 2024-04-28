@@ -1,16 +1,16 @@
 <?php
 
-use App\Models\CasinoEvent;
+use App\Models\Featured;
 
-$casinoevents = CasinoEvent::all();
+$feature = Featured::all();
 ?>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Casino Event
+            Featured
         </h2>
     </x-slot>
-    <h1 class="text-3xl font-bold mb-8">Casino Event</h1>
+    <h1 class="text-3xl font-bold mb-8">Featured</h1>
     <div>
         @if (session()->has('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
@@ -19,15 +19,15 @@ $casinoevents = CasinoEvent::all();
         @endif
     </div>
     <div class="mb-4">
-        <a href="{{ route('casinoevent.create') }}"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create a Casino Event</a>
+        <a href="{{ route('featured.create') }}"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create a Feature</a>
     </div>
     <table class="min-w-full bg-white">
         <thead>
             <tr>
                 <th class="border px-4 py-2">#</th>
                 <th class="border px-4 py-2">Title</th>
-                <th class="border px-4 py-2">Video</th>
+                <th class="border px-4 py-2">Image</th>
                 <th class="border px-4 py-2">Created at</th>
                 <th class="border px-4 py-2">Updated at</th>
                 <th class="border px-4 py-2">Edit</th>
@@ -35,19 +35,17 @@ $casinoevents = CasinoEvent::all();
             </tr>
         </thead>
         <tbody>
-            @foreach ($casinoevents as $casinoevent)
+            @foreach ($feature as $featured)
                 <tr>
-                    <td class="border px-4 py-2">{{ $casinoevent->id }}</td>
-                    <td class="border px-4 py-2">{{ $casinoevent->event_title }}</td>
-                    <td class="border px-4 py-2">{{ $casinoevent->event_video }}</td>
-                    <td class="border px-4 py-2">{{ $casinoevent->created_at }}</td>
-                    <td class="border px-4 py-2">{{ $casinoevent->updated_at }}</td>
-                    <td class="border px-4 py-2"><a
-                            href="{{ route('casinoevent.edit', ['casinoevent' => $casinoevent]) }}"
+                    <td class="border px-4 py-2">{{ $featured->id }}</td>
+                    <td class="border px-4 py-2">{{ $featured->event_title }}</td>
+                    <td class="border px-4 py-2">{{ $featured->event_video }}</td>
+                    <td class="border px-4 py-2">{{ $featured->created_at }}</td>
+                    <td class="border px-4 py-2">{{ $featured->updated_at }}</td>
+                    <td class="border px-4 py-2"><a href="{{ route('featured.edit', ['featured' => $featured]) }}"
                             class="text-blue-500">Edit</a></td>
                     <td class="border px-4 py-2">
-                        <form method="POST"
-                            action="{{ route('casinoevent.destroy', ['casinoevent' => $casinoevent]) }}">
+                        <form method="POST" action="{{ route('featured.destroy', ['featured' => $featured]) }}">
                             @csrf
                             @method('delete')
                             <button type="submit"

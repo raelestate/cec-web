@@ -19,6 +19,7 @@ class CasinoEventController extends Controller
 
     public function store(Request $request)
     {
+        
         $data = $request->validate([
             'event_title' => 'required',
             'event_video' => 'required|mimes:mp4,mov,avi,wmv|max:921600', // 900MB limit

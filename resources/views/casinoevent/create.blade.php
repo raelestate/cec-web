@@ -28,4 +28,11 @@
     <div class="mt-4">
         <x-toast_errors></x-toast_errors>
     </div>
+
+    <!-- Toast Notification -->
+    @if (session('video_upload_status'))
+        <div class="fixed bottom-0 right-0 m-8 bg-green-500 text-white p-4 rounded">
+            {{ session('video_upload_status') }}
+        </div>
+    @endif
 </x-app-layout>

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CasinoEventController;
+use App\Http\Controllers\FeaturedController;
 use App\Http\Controllers\WelcomeCardController;
 
 
@@ -28,6 +29,15 @@ Route::middleware('auth')->group(function () {
     Route::put('/welcomecard/{welcomecard}/update', [WelcomeCardController::class, 'update'])->name('welcomecard.update');
     Route::delete('/welcomecard/{welcomecard}/destroy', [WelcomeCardController::class, 'destroy'])->name('welcomecard.destroy');
 
+    // route Featured CRUD ADMIN
+    Route::get('/featured', [FeaturedController::class, 'index'])->name('featured.index');
+    Route::get('/featured/create', [FeaturedController::class, 'create'])->name('featured.create');
+    Route::post('/featured', [FeaturedController::class, 'store'])->name('featured.store');
+    Route::get('/featured/{featured}/edit', [FeaturedController::class, 'edit'])->name('featured.edit');
+    Route::put('/featured/{featured}/update', [FeaturedController::class, 'update'])->name('featured.update');
+    Route::delete('/featured/{featured}/destroy', [FeaturedController::class, 'destroy'])->name('featured.destroy');
+
+    
     // route casino events
     Route::get('/casinoevent', [CasinoEventController::class, 'index'])->name('casinoevent.index');
     Route::get('/casinoevent/create', [CasinoEventController::class, 'create'])->name('casinoevent.create');
