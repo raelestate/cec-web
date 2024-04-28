@@ -1,16 +1,16 @@
 <?php
 
-use App\Models\WelcomeCard;
+use App\Models\CasinoEvent;
 
-$welcome_cards = WelcomeCard::all();
+$casinoevents = CasinoEvent::all();
 ?>
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Welcome Card
+            Casino Event
         </h2>
     </x-slot>
-    <h1 class="text-3xl font-bold mb-8">Welcome Cards</h1>
+    <h1 class="text-3xl font-bold mb-8">Casino Event</h1>
     <div>
         @if (session()->has('success'))
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
@@ -19,15 +19,15 @@ $welcome_cards = WelcomeCard::all();
         @endif
     </div>
     <div class="mb-4">
-        <a href="{{ route('welcomecard.create') }}"
-            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create a Welcome Card</a>
+        <a href="{{ route('casinoevent.create') }}"
+            class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create a Casino Event</a>
     </div>
     <table class="min-w-full bg-white">
         <thead>
             <tr>
                 <th class="border px-4 py-2">#</th>
                 <th class="border px-4 py-2">Title</th>
-                <th class="border px-4 py-2">Text</th>
+                <th class="border px-4 py-2">Video</th>
                 <th class="border px-4 py-2">Created at</th>
                 <th class="border px-4 py-2">Updated at</th>
                 <th class="border px-4 py-2">Edit</th>
@@ -35,19 +35,19 @@ $welcome_cards = WelcomeCard::all();
             </tr>
         </thead>
         <tbody>
-            @foreach ($welcome_cards as $welcomecard)
+            @foreach ($casinoevents as $casinoevent)
                 <tr>
-                    <td class="border px-4 py-2">{{ $welcomecard->id }}</td>
-                    <td class="border px-4 py-2">{{ $welcomecard->welcome_title }}</td>
-                    <td class="border px-4 py-2">{{ Str::limit($welcomecard->welcome_text, 50, '...') }}</td>
-                    <td class="border px-4 py-2">{{ $welcomecard->created_at }}</td>
-                    <td class="border px-4 py-2">{{ $welcomecard->updated_at }}</td>
+                    <td class="border px-4 py-2">{{ $casinoevent->id }}</td>
+                    <td class="border px-4 py-2">{{ $casinoevent->event_title }}</td>
+                    <td class="border px-4 py-2">{{ $casinoevent->event_video }}</td>
+                    <td class="border px-4 py-2">{{ $casinoevent->created_at }}</td>
+                    <td class="border px-4 py-2">{{ $casinoevent->updated_at }}</td>
                     <td class="border px-4 py-2"><a
-                            href="{{ route('welcomecard.edit', ['welcomecard' => $welcomecard]) }}"
+                            href="{{ route('casinoevent.edit', ['casinoevent' => $casinoevent]) }}"
                             class="text-blue-500">Edit</a></td>
                     <td class="border px-4 py-2">
                         <form method="POST"
-                            action="{{ route('welcomecard.destroy', ['welcomecard' => $welcomecard]) }}">
+                            action="{{ route('casinoevent.destroy', ['casinoevent' => $casinoevent]) }}">
                             @csrf
                             @method('delete')
                             <button type="submit"
@@ -58,7 +58,5 @@ $welcome_cards = WelcomeCard::all();
             @endforeach
         </tbody>
     </table>
-    <div class="mt-4">
-        <x-toast_errors></x-toast_errors>
-    </div>
+    <x-toast_errors></x-toast_errors>
 </x-app-layout>

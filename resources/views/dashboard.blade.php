@@ -10,11 +10,13 @@ $carousels = Carousel::all();
         </h2>
     </x-slot>
     <x-admin_dashboard_register_user></x-admin_dashboard_register_user>
+    <div class="container mx-auto px-5">
+        <div class="grid grid-cols-2 gap-0">
+            <x-admin-dashboard-redirect-welcomecard></x-admin-dashboard-redirect-welcomecard>
+            <x-admin-dashboard-redirect-carousel></x-admin-dashboard-redirect-carousel>
+            <x-admin-dashboard-redirect-casinoevents></x-admin-dashboard-redirect-casinoevents>
+        </div>
 
-    <div class="grid grid-cols-2 gap-0">
-        <x-admin-dashboard-redirect-welcomecard></x-admin-dashboard-redirect-welcomecard>
-
-        <x-admin-dashboard-redirect-carousel></x-admin-dashboard-redirect-carousel>
     </div>
 
 

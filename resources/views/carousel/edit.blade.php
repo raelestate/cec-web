@@ -6,8 +6,8 @@
     </x-slot>
     <h1 class="text-3xl font-bold mb-8">EDIT</h1>
     <img src="{{ $carousel->image }}" alt="">
-    <form method="POST" action="{{ route('carousel.update', ['carousel' => $carousel]) }}"
-        enctype="multipart/form-data" class="mt-8">
+    <form method="POST" action="{{ route('carousel.update', ['carousel' => $carousel]) }}" enctype="multipart/form-data"
+        class="mt-8">
         @csrf
         @method('put')
         <div class="mb-4">
@@ -19,7 +19,8 @@
         <div class="mb-4">
             <label for="image" class="block text-sm font-medium text-gray-700">Image</label>
             <input type="file" name="image" id="image"
-                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" value="{{$carousel->image}}">
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                value="{{ $carousel->image }}">
         </div>
         <div>
             <input type="submit"
@@ -28,12 +29,6 @@
         </div>
     </form>
     <div class="mt-4">
-        @if ($errors->any())
-            <ul class="list-disc list-inside text-red-500">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
+        <x-toast_errors></x-toast_errors>
     </div>
 </x-app-layout>

@@ -51,5 +51,7 @@
             @endforeach
         </tbody>
     </table>
-
+    <div class="mt-4">
+        <x-toast_errors></x-toast_errors>
+    </div>
 </x-app-layout>

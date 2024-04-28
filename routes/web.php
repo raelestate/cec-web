@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarouselController;
+use App\Http\Controllers\CasinoEventController;
 use App\Http\Controllers\WelcomeCardController;
 
 
@@ -27,6 +28,13 @@ Route::middleware('auth')->group(function () {
     Route::put('/welcomecard/{welcomecard}/update', [WelcomeCardController::class, 'update'])->name('welcomecard.update');
     Route::delete('/welcomecard/{welcomecard}/destroy', [WelcomeCardController::class, 'destroy'])->name('welcomecard.destroy');
 
+    // route casino events
+    Route::get('/casinoevent', [CasinoEventController::class, 'index'])->name('casinoevent.index');
+    Route::get('/casinoevent/create', [CasinoEventController::class, 'create'])->name('casinoevent.create');
+    Route::post('/casinoevent', [CasinoEventController::class, 'store'])->name('casinoevent.store');
+    Route::get('/casinoevent/{casinoevent}/edit', [CasinoEventController::class, 'edit'])->name('casinoevent.edit');
+    Route::put('/casinoevent/{casinoevent}/update', [CasinoEventController::class, 'update'])->name('casinoevent.update');
+    Route::delete('/casinoevent/{casinoevent}/destroy', [CasinoEventController::class, 'destroy'])->name('casinoevent.destroy');
 
 
 

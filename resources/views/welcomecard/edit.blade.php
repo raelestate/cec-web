@@ -28,12 +28,6 @@
         </div>
     </form>
     <div class="mt-4">
-        @if ($errors->any())
-            <ul class="list-disc list-inside text-red-500">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        @endif
+        <x-toast_errors></x-toast_errors>
     </div>
 </x-app-layout>
