@@ -4,9 +4,11 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CasinoEventController;
+use App\Http\Controllers\DirectorController;
 use App\Http\Controllers\FeaturedController;
 use App\Http\Controllers\FactSheetController;
 use App\Http\Controllers\HouseRuleController;
+use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\WelcomeCardController;
 use App\Http\Controllers\ManualsController;
 
@@ -83,6 +85,23 @@ Route::middleware('auth')->group(function () {
     Route::get('/manuals/{manuals}/edit', [ManualsController::class, 'edit'])->name('manuals.edit');
     Route::put('/manuals/{manuals}/update', [ManualsController::class, 'update'])->name('manuals.update');
     Route::delete('/manuals/{manuals}/destroy', [ManualsController::class, 'destroy'])->name('manuals.destroy');
+
+    //route directors
+    Route::get('/director', [DirectorController::class, 'index'])->name('directors.index');
+    Route::get('/director/create', [DirectorController::class, 'create'])->name('directors.create');
+    Route::post('/director', [DirectorController::class, 'store'])->name('directors.store');
+    Route::get('/director/{director}/edit', [DirectorController::class, 'edit'])->name('directors.edit');
+    Route::put('/director/{director}/update', [DirectorController::class, 'update'])->name('directors.update');
+    Route::delete('/director/{director}/destroy', [DirectorController::class, 'destroy'])->name('directors.destroy');
+
+    //route management
+    Route::get('/managements', [ManagementController::class, 'index'])->name('managements.index');
+    Route::get('/managements/create', [ManagementController::class, 'create'])->name('managements.create');
+    Route::post('/managements', [ManagementController::class, 'store'])->name('managements.store');
+    Route::get('/managements/{managements}/edit', [ManagementController::class, 'edit'])->name('managements.edit');
+    Route::put('/managements/{managements}/update', [ManagementController::class, 'update'])->name('managements.update');
+    Route::delete('/managements/{managements}/destroy', [ManagementController::class, 'destroy'])->name('managements.destroy');
+
 
 
 
