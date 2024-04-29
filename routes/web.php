@@ -5,14 +5,27 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarouselController;
 use App\Http\Controllers\CasinoEventController;
 use App\Http\Controllers\FeaturedController;
+use App\Http\Controllers\FactSheetController;
+use App\Http\Controllers\HouseRuleController;
 use App\Http\Controllers\WelcomeCardController;
-
+use App\Http\Controllers\ManualsController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    // route template
+    // Route::get('/', [Controller::class, 'index'])->name('.index');
+    // Route::get('//create', [Controller::class, 'create'])->name('.create');
+    // Route::post('/', [Controller::class, 'store'])->name('.store');
+    // Route::get('//{}/edit', [Controller::class, 'edit'])->name('.edit');
+    // Route::put('//{}/update', [Controller::class, 'update'])->name('.update');
+    // Route::delete('//{}/destroy', [Controller::class, 'destroy'])->name('.destroy');
+
+
+
     // route carousel CRUD ADMIN
     Route::get('/carousel', [CarouselController::class, 'index'])->name('carousel.index');
     Route::get('/carousel/create', [CarouselController::class, 'create'])->name('carousel.create');
@@ -45,6 +58,31 @@ Route::middleware('auth')->group(function () {
     Route::get('/casinoevent/{casinoevent}/edit', [CasinoEventController::class, 'edit'])->name('casinoevent.edit');
     Route::put('/casinoevent/{casinoevent}/update', [CasinoEventController::class, 'update'])->name('casinoevent.update');
     Route::delete('/casinoevent/{casinoevent}/destroy', [CasinoEventController::class, 'destroy'])->name('casinoevent.destroy');
+
+    
+    //route fact sheet
+    Route::get('/factsheet', [FactSheetController::class, 'index'])->name('factsheet.index');
+    Route::get('/factsheet/create', [FactSheetController::class, 'create'])->name('factsheet.create');
+    Route::post('/factsheet', [FactSheetController::class, 'store'])->name('factsheet.store');
+    Route::get('/factsheet/{fact_sheets}/edit', [FactSheetController::class, 'edit'])->name('factsheet.edit');
+    Route::put('/factsheet/{fact_sheets}/update', [FactSheetController::class, 'update'])->name('factsheet.update');
+    Route::delete('/factsheet/{fact_sheets}/destroy', [FactSheetController::class, 'destroy'])->name('factsheet.destroy');
+
+    //route house rules
+    Route::get('/houserules', [HouseRuleController::class, 'index'])->name('houserules.index');
+    Route::get('/houserules/create', [HouseRuleController::class, 'create'])->name('houserules.create');
+    Route::post('/houserules', [HouseRuleController::class, 'store'])->name('houserules.store');
+    Route::get('/houserules/{houserules}/edit', [HouseRuleController::class, 'edit'])->name('houserules.edit');
+    Route::put('/houserules/{houserules}/update', [HouseRuleController::class, 'update'])->name('houserules.update');
+    Route::delete('/houserules/{houserules}/destroy', [HouseRuleController::class, 'destroy'])->name('houserules.destroy');
+
+    //route manuals
+    Route::get('/manuals', [ManualsController::class, 'index'])->name('manuals.index');
+    Route::get('/manuals/create', [ManualsController::class, 'create'])->name('manuals.create');
+    Route::post('/manuals', [ManualsController::class, 'store'])->name('manuals.store');
+    Route::get('/manuals/{manuals}/edit', [ManualsController::class, 'edit'])->name('manuals.edit');
+    Route::put('/manuals/{manuals}/update', [ManualsController::class, 'update'])->name('manuals.update');
+    Route::delete('/manuals/{manuals}/destroy', [ManualsController::class, 'destroy'])->name('manuals.destroy');
 
 
 
