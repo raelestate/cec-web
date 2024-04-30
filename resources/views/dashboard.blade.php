@@ -9,7 +9,6 @@ $carousels = Carousel::all();
             <x-admin_dashboard_greet_user></x-admin_dashboard_greet_user>
         </h2>
     </x-slot>
-    <x-admin_dashboard_register_user></x-admin_dashboard_register_user>
     <div class="container mx-auto px-5">
         <x-admin-group_data></x-admin-group_data>
     </div>

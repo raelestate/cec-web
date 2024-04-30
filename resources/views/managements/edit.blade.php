@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Management
+            management
         </h2>
     </x-slot>
     <h1 class="text-3xl font-bold mb-8">EDIT</h1>
@@ -11,20 +11,20 @@
         @csrf
         @method('put')
         <div class="mb-4">
-            <label for="managements_name" class="block text-sm font-medium text-gray-700">Name</label>
-            <input type="text" name="managements_name" id="managements_name" placeholder="management's Name"
-                value="{{ $management->managements_name }}"
+            <label for="management_name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" name="management_name" id="management_name" placeholder="management's Name"
+                value="{{ $management->management_name }}"
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         </div>
         <div class="mb-4">
-            <label for="managements_position" class="block text-sm font-medium text-gray-700">Position</label>
-            <input type="text" name="managements_position" id="managements_position"
-                placeholder="management's Position" value="{{ $management->managements_position }}"
+            <label for="management_position" class="block text-sm font-medium text-gray-700">Position</label>
+            <input type="text" name="management_position" id="management_position"
+                placeholder="management's Position" value="{{ $management->management_position }}"
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         </div>
         <div class="mb-4">
-            <label for="managements_image" class="block text-sm font-medium text-gray-700">Image</label>
-            <input type="file" name="managements_image" id="managements_image"
+            <label for="management_image" class="block text-sm font-medium text-gray-700">Image</label>
+            <input type="file" name="management_image" id="management_image"
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         </div>
         <div>

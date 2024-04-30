@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Managements
+            managements
         </h2>
     </x-slot>
     <div>
@@ -9,7 +9,7 @@
             <div class="bg-green-200 text-green-800 py-2 px-4 rounded-md mb-4">{{ session('success') }}</div>
         @endif
     </div>
-    <div class="mb-4">Create a Management</div>
+    <div class="mb-4">Create a management</div>
     <a href="{{ route('managements.create') }}"
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Create</a>
     <table class="w-full mt-8">
@@ -38,12 +38,12 @@
                     <td class="border px-4 py-2">{{ $management->created_at }}</td>
                     <td class="border px-4 py-2">{{ $management->updated_at }}</td>
                     <td class="border px-4 py-2">
-                        <a href="{{ route('managements.edit', ['managements' => $management]) }}"
+                        <a href="{{ route('managements.edit', ['management' => $management]) }}"
                             class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">Edit</a>
                     </td>
                     <td class="border px-4 py-2">
                         <form method="POST"
-                            action="{{ route('managements.destroy', ['managements' => $management]) }}">
+                            action="{{ route('managements.destroy', ['management' => $management]) }}">
                             @csrf
                             @method('delete')
                             <button type="submit"
