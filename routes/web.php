@@ -95,12 +95,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/director/{director}/destroy', [DirectorController::class, 'destroy'])->name('directors.destroy');
 
     //route management
-    Route::get('/managements', [ManagementController::class, 'index'])->name('managements.index');
-    Route::get('/managements/create', [ManagementController::class, 'create'])->name('managements.create');
-    Route::post('/managements', [ManagementController::class, 'store'])->name('managements.store');
-    Route::get('/managements/{managements}/edit', [ManagementController::class, 'edit'])->name('managements.edit');
-    Route::put('/managements/{managements}/update', [ManagementController::class, 'update'])->name('managements.update');
-    Route::delete('/managements/{managements}/destroy', [ManagementController::class, 'destroy'])->name('managements.destroy');
+    Route::get('/management', [ManagementController::class, 'index'])->name('managements.index');
+    Route::get('/management/create', [ManagementController::class, 'create'])->name('managements.create');
+    Route::post('/management', [ManagementController::class, 'store'])->name('managements.store');
+    Route::get('/management/{management}/edit', [ManagementController::class, 'edit'])->name('managements.edit');
+    Route::put('/management/{management}/update', [ManagementController::class, 'update'])->name('managements.update');
+    Route::delete('/management/{management}/destroy', [ManagementController::class, 'destroy'])->name('managements.destroy');
 
 
 
