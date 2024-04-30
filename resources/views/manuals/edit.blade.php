@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <h1 class="text-3xl font-bold mb-8"></h1>
-    <form method="POST" action="{{ route('manuals.update', ['manual' => $manual]) }}" enctype="multipart/form-data"
+    <form method="POST" action="{{ route('manuals.update', ['manuals' => $manual]) }}" enctype="multipart/form-data"
         class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
         @csrf
         @method('put')

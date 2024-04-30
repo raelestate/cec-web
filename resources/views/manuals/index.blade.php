@@ -35,17 +35,17 @@ $manuals = Manuals::all();
             </tr>
         </thead>
         <tbody>
-            @foreach ($manuals as $manual)
+            @foreach ($manuals as $data)
                 <tr>
-                    <td class="border px-4 py-2">{{ $manual->id }}</td>
-                    <td class="border px-4 py-2">{{ $manual->manuals_title }}</td>
-                    <td class="border px-4 py-2">{{ $manual->manuals_pdf }}</td>
-                    <td class="border px-4 py-2">{{ $manual->created_at }}</td>
-                    <td class="border px-4 py-2">{{ $manual->updated_at }}</td>
-                    <td class="border px-4 py-2"><a href="{{ route('manuals.edit', ['manuals' => $manual]) }}"
+                    <td class="border px-4 py-2">{{ $data->id }}</td>
+                    <td class="border px-4 py-2">{{ $data->manuals_title }}</td>
+                    <td class="border px-4 py-2">{{ $data->manuals_pdf }}</td>
+                    <td class="border px-4 py-2">{{ $data->created_at }}</td>
+                    <td class="border px-4 py-2">{{ $data->updated_at }}</td>
+                    <td class="border px-4 py-2"><a href="{{ route('manuals.edit', ['manuals' => $data]) }}"
                             class="text-blue-500">Edit</a></td>
                     <td class="border px-4 py-2">
-                        <form method="POST" action="{{ route('manuals.destroy', ['manuals' => $manual]) }}">
+                        <form method="POST" action="{{ route('manuals.destroy', ['manuals' => $data]) }}">
                             @csrf
                             @method('delete')
                             <button type="submit"
