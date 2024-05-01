@@ -81,7 +81,7 @@
         </ul>
     </div>
 
-    <div class="mt-4">
+    <div class="mt-4 text-lime-50">
         <p>Please enclose all the requirements in a blue long folder</p>
         <p>For inquiries, please contact Membership - Ruchielle Ann (ching) @ 253-1261 Loc 201 or 0917-6209683</p>
         <p>Download Forms:</p>

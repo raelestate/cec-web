@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AmenityController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CarouselController;
@@ -11,21 +12,13 @@ use App\Http\Controllers\HouseRuleController;
 use App\Http\Controllers\ManagementController;
 use App\Http\Controllers\WelcomeCardController;
 use App\Http\Controllers\ManualsController;
+use App\Http\Controllers\PromotionController;
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-
-    // route template
-    // Route::get('/', [Controller::class, 'index'])->name('.index');
-    // Route::get('//create', [Controller::class, 'create'])->name('.create');
-    // Route::post('/', [Controller::class, 'store'])->name('.store');
-    // Route::get('//{}/edit', [Controller::class, 'edit'])->name('.edit');
-    // Route::put('//{}/update', [Controller::class, 'update'])->name('.update');
-    // Route::delete('//{}/destroy', [Controller::class, 'destroy'])->name('.destroy');
-
 
 
     // route carousel CRUD ADMIN
@@ -102,7 +95,21 @@ Route::middleware('auth')->group(function () {
     Route::put('/management/{management}/update', [ManagementController::class, 'update'])->name('managements.update');
     Route::delete('/management/{management}/destroy', [ManagementController::class, 'destroy'])->name('managements.destroy');
 
+    //route amenities
+    Route::get('/amenities', [AmenityController::class, 'index'])->name('amenities.index');
+    Route::get('/amenities/create', [AmenityController::class, 'create'])->name('amenities.create');
+    Route::post('/amenities', [AmenityController::class, 'store'])->name('amenities.store');
+    Route::get('/amenities/{amenity}/edit', [AmenityController::class, 'edit'])->name('amenities.edit');
+    Route::put('/amenities/{amenity}/update', [AmenityController::class, 'update'])->name('amenities.update');
+    Route::delete('/amenities/{amenity}/destroy', [AmenityController::class, 'destroy'])->name('amenities.destroy');
 
+    //route promotions
+    Route::get('/promotions', [PromotionController::class, 'index'])->name('promotions.index');
+    Route::get('/promotions/create', [PromotionController::class, 'create'])->name('promotions.create');
+    Route::post('/promotions', [PromotionController::class, 'store'])->name('promotions.store');
+    Route::get('/promotions/{promotion}/edit', [PromotionController::class, 'edit'])->name('promotions.edit');
+    Route::put('/promotions/{promotion}/update', [PromotionController::class, 'update'])->name('promotions.update');
+    Route::delete('/promotions/{promotion}/destroy', [PromotionController::class, 'destroy'])->name('promotions.destroy');
 
 
     //profile CRUD ADMIN
@@ -155,9 +162,7 @@ Route::get('/member_login', function () {
 Route::get('/membership', function () {
     return view('membership');
 });
-Route::get('/promotions', function () {
-    return view('promotions');
-});
+
 Route::get('/restaurant_outlets', function () {
     return view('restaurant_outlets');
 });
