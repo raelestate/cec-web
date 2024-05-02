@@ -11,7 +11,7 @@ $carousels = Carousel::all();
             @foreach ($carousels as $carousel)
                 <div class="w-full flex-shrink-0 flex items-center justify-center relative">
                     <img src="{{ $carousel->image }}" alt="Slide {{ $loop->iteration }}"
-                        class="object-cover h-64 rounded-lg w-full">
+                        class="object-cover h-full rounded-lg w-full">
                     <span
                         class="absolute inset-0 flex items-center justify-center text-white text-xl bg-black bg-opacity-25">{{ $carousel->carousel_title }}</span>
                 </div>
@@ -25,6 +25,3 @@ $carousels = Carousel::all();
         </template>
     </div>
 </div>
-
-
-
