@@ -28,6 +28,7 @@ $manuals = Manuals::all();
                 <th class="border px-4 py-2">#</th>
                 <th class="border px-4 py-2">Title</th>
                 <th class="border px-4 py-2">PDF</th>
+                <th class="border px-4 py-2">Type</th>
                 <th class="border px-4 py-2">Created at</th>
                 <th class="border px-4 py-2">Updated at</th>
                 <th class="border px-4 py-2">Edit</th>
@@ -40,6 +41,7 @@ $manuals = Manuals::all();
                     <td class="border px-4 py-2">{{ $data->id }}</td>
                     <td class="border px-4 py-2">{{ $data->manuals_title }}</td>
                     <td class="border px-4 py-2">{{ $data->manuals_pdf }}</td>
+                    <td class="border px-4 py-2">{{ $data->manuals_type }}</td>
                     <td class="border px-4 py-2">{{ $data->created_at }}</td>
                     <td class="border px-4 py-2">{{ $data->updated_at }}</td>
                     <td class="border px-4 py-2"><a href="{{ route('manuals.edit', ['manuals' => $data]) }}"

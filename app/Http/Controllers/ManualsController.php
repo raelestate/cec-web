@@ -21,6 +21,7 @@ class ManualsController extends Controller
     {
         $data = $request->validate([
             'manuals_title' => 'required',
+            'manuals_type' => 'nullable',
             'manuals_pdf' => 'required|file|mimes:pdf|max:2048',
         ]);
 
@@ -30,6 +31,7 @@ class ManualsController extends Controller
 
         $manual = new Manuals();
         $manual->manuals_title = $request->manuals_title;
+        $manual->manuals_type = $request->manuals_type;
         $manual->manuals_pdf = '/pdf/manuals/' . $pdfName;
         $manual->save();
 
@@ -45,6 +47,7 @@ class ManualsController extends Controller
     {
         $data = $request->validate([
             'manuals_title' => 'required',
+            'manuals_type' => 'nullable',
             'manuals_pdf' => 'required|file|mimes:pdf|max:2048',
         ]);
 

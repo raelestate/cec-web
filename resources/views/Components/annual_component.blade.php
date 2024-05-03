@@ -5,7 +5,7 @@ use App\Models\Manuals;
 $manuals = Manuals::all();
 ?>
 @foreach ($manuals as $data)
-@if ($data->manuals_type == 'Manual')
+@if ($data->manuals_type == 'Annual')
 <div class="mx-auto px-5 pt-5">
     <div class="collapse collapse-arrow transparent border text-lime-100">
         <input type="radio" name="my-accordion-2" checked="checked" />

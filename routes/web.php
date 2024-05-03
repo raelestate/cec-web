@@ -128,6 +128,9 @@ Route::get('/', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+Route::get('/annual', function () {
+    return view('annual');
+});
 
 Route::get('/board', function () {
     return view('board');

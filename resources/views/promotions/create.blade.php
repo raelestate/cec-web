@@ -28,7 +28,7 @@
                         <option value="Chef Specialty">Chef Specialty</option>
                         <option value="Club Events">Club Events</option>
                         <option value="Circulars">Circulars</option>
-                    </select>
+                    </select> 
                 </div>
 
                 <div class="mb-4">

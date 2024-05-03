@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         // User::factory(10)->create();
 
         DB::table('users')->insert([
-            'id' => '3',
-            'name' => 'billy',
-            'email' => 'billy@ceec.com',
+            'id' => '1',
+            'name' => '1',
+            'email' => '1@1.com',
             'email_verified_at' => null,
             'password' => '$2y$12$Ni.HNi2m8AvvcvQYFRltReD.lJFfBKaoqkjrfEGym357GEiJU/7N2',
             'remember_token' => '',
