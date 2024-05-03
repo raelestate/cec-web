@@ -14,9 +14,11 @@
             <x-welcome_card></x-welcome_card>
         </div>
 
-        <div class="container mx-auto pt-10 px-14">
+        <div class="container mx-auto pt-10 px-14 grid grid-cols-1 md:grid-cols-2 gap-4">
             <x-casino_activities></x-casino_activities>
+            <x-facebook></x-facebook>
         </div>
+
         <div class="container mx-auto pt-10 w-full px-10">
             <x-featured></x-featured>
         </div>

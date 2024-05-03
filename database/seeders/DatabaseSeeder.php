@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         //     'created_at' => null,
         //     'updated_at' => null,
         // ]);
-        Management::factory(100)->create();
-        Director::factory(100)->create();
+        // Management::factory(100)->create();
+        // Director::factory(100)->create();
     }
 }
