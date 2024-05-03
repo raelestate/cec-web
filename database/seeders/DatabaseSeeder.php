@@ -18,17 +18,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // DB::table('users')->insert([
-        //     'id' => '1',
-        //     'name' => 'Rhyll',
-        //     'email' => 'rhyll@cec.com',
-        //     'email_verified_at' => null,
-        //     'password' => '$2y$12$PbHCmeXCOnFVCBSeU7les.TcgtLUx1Dw7av.NEhgUkItshBZ7Au.G',
-        //     'remember_token' => '',
-        //     'created_at' => null,
-        //     'updated_at' => null,
-        // ]);
-        Management::factory(100)->create();
-        Director::factory(100)->create();
+        DB::table('users')->insert([
+            'id' => '3',
+            'name' => 'billy',
+            'email' => 'billy@ceec.com',
+            'email_verified_at' => null,
+            'password' => '$2y$12$Ni.HNi2m8AvvcvQYFRltReD.lJFfBKaoqkjrfEGym357GEiJU/7N2',
+            'remember_token' => '',
+            'created_at' => null,
+            'updated_at' => null,
+        ]);
+        // Management::factory(100)->create();
+        // Director::factory(100)->create();
     }
 }
