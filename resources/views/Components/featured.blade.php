@@ -9,7 +9,7 @@ $features = Featured::all();
         <h2 class="card-title">Featured!</h2>
         @foreach ($features as $featured)
             <div class="collapse collapse-plus transparent border">
-                <input type="radio" name="my-accordion-3" checked="checked" />
+                <input type="radio" name="my-accordion-3" />
                 <div class="collapse-title text-xl font-medium">
                     {{ $featured->featured_title }}
                 </div>

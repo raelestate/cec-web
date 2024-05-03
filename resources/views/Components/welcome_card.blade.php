@@ -4,45 +4,19 @@ use App\Models\WelcomeCard;
 
 $welcomeCard = WelcomeCard::all();
 ?>
-<div class="mx-auto mt-20 text-white border p-5 rounded-xl">
-    <h1 class="py-2 font-bold text-xl ">
+<div class="mx-auto text-white border p-9 rounded-xl">
+    <h1 class="py-2 font-bold lg:text-5xl pb-7">
         @foreach ($welcomeCard as $welcomeCards)
             {{ $welcomeCards->welcome_title }}
         @endforeach
     </h1>
-    <p class="leading-relaxed text-justify">
+    <p class="leading-relaxed text-justify lg:text-2xl pb-5">
         @foreach ($welcomeCard as $welcomeCards)
             <?php
             $text = nl2br($welcomeCards->welcome_text); // Detect line breaks and convert them to <br> tags
-            $shortText = strlen($text) > 200 ? substr($text, 0, 200) : $text;
-            $remainingText = strlen($text) > 200 ? substr($text, 200) : '';
+
             ?>
-            {!! $shortText !!}
-            @if (strlen($text) > 200)
-                <span class="hidden" id="more-text">{!! $remainingText !!}</span>
-            @endif
+            {!! $text !!}
         @endforeach
     </p>
-    <button id="toggle-btn" class="mt-4 text-blue-500 focus:outline-none">Read More</button>
-    <button id="hide-btn" class="hidden mt-4 text-blue-500 focus:outline-none">Hide</button>
 </div>
-
-
-
-<script>
-    const moreTextEl = document.getElementById('more-text');
-    const toggleBtnEl = document.getElementById('toggle-btn');
-    const hideBtnEl = document.getElementById('hide-btn');
-
-    toggleBtnEl.addEventListener('click', () => {
-        moreTextEl.classList.toggle('hidden');
-        toggleBtnEl.classList.toggle('hidden');
-        hideBtnEl.classList.toggle('hidden');
-    });
-
-    hideBtnEl.addEventListener('click', () => {
-        moreTextEl.classList.toggle('hidden');
-        toggleBtnEl.classList.toggle('hidden');
-        hideBtnEl.classList.toggle('hidden');
-    });
-</script>

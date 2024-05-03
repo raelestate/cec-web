@@ -10,12 +10,20 @@
         class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
         @csrf
         <div class="mb-4">
-            <label for="manuals_title" class="block text-sm font-medium text-gray-700"></label>
+            <label for="manuals_title" class="block text-sm font-medium text-gray-700">Manual Title</label>
             <input type="text" name="manuals_title" id="manuals_title" placeholder="Manual Title"
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         </div>
         <div class="mb-4">
-            <label for="manuals_pdf" class="block text-sm font-medium text-gray-700"></label>
+            <label for="manuals_type" class="block text-sm font-medium text-gray-700">Type</label>
+            <select name="manuals_type" id="manuals_type"
+                class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                <option value="Manual">Manual</option>
+                <option value="Annual_Event">Annual Event</option>
+            </select>
+        </div>
+        <div class="mb-4">
+            <label for="manuals_pdf" class="block text-sm font-medium text-gray-700">Upload PDF</label>
             <input type="file" name="manuals_pdf" id="manuals_pdf"
                 class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
         </div>

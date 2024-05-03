@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('manuals', function (Blueprint $table) {
             $table->id();
             $table->string('manuals_title');
+            $table->string('manuals_type');
             $table->binary('manuals_pdf');
             $table->timestamps();
         });
