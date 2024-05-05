@@ -54,8 +54,7 @@
                             <summary class="text-lg">Amenities</summary>
                             <ul class="text-center">
                                 <li class="px-2">
-                                    <x-nav-home href="/restaurant_outlets"
-                                        :active="request()->is('restaurant_outlets')">Restaurant
+                                    <x-nav-home href="/restaurant_outlets" :active="request()->is('restaurant_outlets')">Restaurant
                                         Outlets</x-nav-home>
                                     <x-nav-home href="/function_rooms" :active="request()->is('function_rooms')">
                                         Function Rooms</x-nav-home>
