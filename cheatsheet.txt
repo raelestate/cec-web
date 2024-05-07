@@ -303,7 +303,8 @@ then at controller
         $carousel->delete();
         return redirect()->route('carousel.index')->with('success', 'Carousel deleted successfully.');
     }
-
+   test
+   
 
 
 

@@ -94,8 +94,14 @@
                     <li>
                         <x-nav-home href="/circulars" :active="request()->is('circulars')">Circulars</x-nav-home>
                         <x-nav-home href="/contact" :active="request()->is('contact')">Contact Us</x-nav-home>
-                        <x-nav-home href="/member_login" :active="request()->is('member_login')">Member Login
-                        </x-nav-home>
+                        @props([
+                            'active' => false,
+                        ])
+                        <a class="{{ $active ? 'border rounded-xl text-white' : 'text-white-500 hover:underline pb-4' }} 
+            rounded-md px-3 py-2 text-lg"
+                            aria-current="{{ request()->is('/https://123123123123') ? 'page' : 'false' }}"{{ $attributes }}>
+                            Member Login
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -210,7 +216,14 @@
         <div class="navbar-end hidden lg:flex">
             <ul class="menu menu-horizontal px-1">
                 <li>
-                    <x-nav-home href="/member_login" :active="request()->is('member_login')">Member Login</x-nav-home>
+                    @props([
+                        'active' => false,
+                    ])
+                    <a class="{{ $active ? 'border rounded-xl text-white' : 'text-white-500 hover:underline pb-4' }} 
+        rounded-md px-3 py-2 text-lg"
+                        aria-current="{{ request()->is('/https://123123123123') ? 'page' : 'false' }}"{{ $attributes }}>
+                        Member Login
+                    </a>
                 </li>
             </ul>
         </div>
